@@ -1,6 +1,5 @@
 SELECT *
 FROM PortfolioProject..CovidDeaths
-Where continent is not null
 ORDER BY 3,4
 
 --SELECT *
@@ -9,7 +8,6 @@ ORDER BY 3,4
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
 FROM PortfolioProject..CovidDeaths
-Where continent is not null
 ORDER BY 1,2
 
 --Looking at Total Cases vs Total Deaths
