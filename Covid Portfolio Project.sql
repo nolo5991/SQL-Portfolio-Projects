@@ -56,6 +56,7 @@ ORDER BY DeathCount DESC
 
 SET ANSI_WARNINGS OFF;
 GO
+ 
 --GLOBAL Numbers
 
 SELECT sum(new_cases) as total_cases, sum(new_deaths) as total_deaths,SUM(NULLIF(new_deaths,0))/SUM(NULLIF(new_cases,0))*100 as DeathPercentage
@@ -103,7 +104,6 @@ Population numeric,
 New_vaccinations numeric,
 UpdatedVaccinatedPeople numeric
 )
-
 
 Insert into #PercentPopulationVaccinated
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, SUM(convert(float,vac.new_vaccinations)) 
